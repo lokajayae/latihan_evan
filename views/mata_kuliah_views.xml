@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="mata_kuliah_tree">
+            <field name="name">mata.kuliah.tree</field>
+            <field name="model">mata.kuliah</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="kode"/>
+                    <field name="nama"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="mata_kuliah_form">
+            <field name="name">mata.kuliah.form</field>
+                <field name="model">mata.kuliah</field>
+                <field name="arch" type="xml">
+                    <form string="Kelas">
+                        <sheet>
+                            <group>
+                                <field name="kode"/>
+                                <field name="nama"/>
+                                <field name="partner_id"/>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+
+        <!-- Kanban View -->
+        <record id="mata_kuliah_kanban" model="ir.ui.view">
+            <field name="name">mata.kuliah.kanban</field>
+            <field name="model">mata.kuliah</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="kode"/>
+                    <field name="nama"/>
+                    <field name="partner_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <ul style="padding:30px;"> 
+                                <li>
+                                    Nama Kelas : <field name="kode" />
+                                </li>
+                                <li>
+                                    Wali Kelas : <field name="nama"/>
+                                </li>
+                                <li>
+                                    Dosen Pengampu : <field name="partner_id"/>
+                                </li>
+                              </ul>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>

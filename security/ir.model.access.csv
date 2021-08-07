@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_module_kelas,acess_model_kelas_user,model_kelas_kelas,base.group_user,1,1,1,1
+access_module_mata_kuliah,acess_model_mata_kuliah_user,model_mata_kuliah,base.group_user,1,1,1,1

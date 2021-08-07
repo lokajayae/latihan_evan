@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="nama_model_form">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="age"/>
+                    <field name="is_dosen"/>
+                    <field name="kelas_id"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="action_dosen" model="ir.actions.act_window">
+          <field name="name">Dosen</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">res.partner</field>
+          <field name="view_mode">kanban,tree,form</field>
+          <field name="search_view_id" ref="base.view_res_partner_filter"/>
+          <field name='domain'>[('is_dosen', '=', True)]</field>
+        </record>
+
+        <record id="action_mahasiswa" model="ir.actions.act_window">
+          <field name="name">Mahasiswa</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">res.partner</field>
+          <field name="view_mode">kanban,tree,form</field>
+          <field name="search_view_id" ref="base.view_res_partner_filter"/>
+          <field name='domain'>[('is_dosen', '=', False)]</field>
+        </record>
+
+        <menuitem id="civitas_menuitem" 
+          name="Civitas Akademika"/>
+
+        <menuitem id="dosen_menuitem" 
+          name="Dosen" 
+          parent="civitas_menuitem" 
+          action="action_dosen"/>
+
+        <menuitem id="mahasiswa_menuitem" 
+        name="Mahasiswa" 
+        parent="civitas_menuitem"
+        action="action_mahasiswa"/>
+    </data>
+</odoo>

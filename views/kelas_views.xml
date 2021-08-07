@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="kelas_kelas_tree">
+            <field name="name">kelas_kelas.tree</field>
+            <field name="model">kelas.kelas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nama"/>
+                    <field name="wali_kelas"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="kelas_kelas_form">
+            <field name="name">kelas_kelas.form</field>
+                <field name="model">kelas.kelas</field>
+                <field name="arch" type="xml">
+                    <form string="Kelas">
+                        <sheet>
+                            <group>
+                                <field name="nama"/>
+                                <field name="mahasiswa"/>
+                                <field name="wali_kelas"/>
+                                <field name="mata_kuliah"/>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+
+        <!-- Kanban View -->
+        <record id="kelas_kelas_kanban" model="ir.ui.view">
+            <field name="name">kelas_kelas.kanban</field>
+            <field name="model">kelas.kelas</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="nama" />
+                    <field name="wali_kelas" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <ul style="padding:30px;"> 
+                                <li>
+                                    Nama Kelas : <field name="nama" />
+                                </li>
+                                <li>
+                                    Wali Kelas : <field name="wali_kelas"/>
+                                </li>
+                              </ul>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="action_kelas" model="ir.actions.act_window">
+          <field name="name">Kelas</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">kelas.kelas</field>
+          <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <record id="action_matkul" model="ir.actions.act_window">
+          <field name="name">Mata Kuliah</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">mata.kuliah</field>
+          <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <menuitem id="kelas_menuitem" 
+          name="Kelas"/>
+
+        <menuitem id="kelas_submenuitem" 
+          name="Kelas"
+          parent="kelas_menuitem"
+          action="action_kelas"/>
+
+        <menuitem id="matkul_menuitem" 
+          name="Mata Kuliah"
+          parent="kelas_menuitem"
+          action="action_matkul"/>
+    </data>
+</odoo>
