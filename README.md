@@ -10,7 +10,7 @@ Sebuah modul untuk Odoo 14 untuk manajemen kelas yang didalamnya terdapat Mahasi
    * Mata Kuliah
 
 ## Report
-![Report Mahasiswa](https://github.com/loakajaye/latihan_evan/blob/main/blob/report_mahasiswa.JPG?raw=true)
+![Report Mahasiswa](https://github.com/lokajayae/latihan_evan/blob/main/blob/report_mahasiswa.JPG?raw=true)
 
 ## Prerequisite
 Oddo 14
