@@ -11,6 +11,8 @@ class res_partner(models.Model):
     age = fields.Integer(
       string = "Umur",
       compute = "_compute_age",
+      inverse = "_inverse_age",
+      search= "_search_age",
       store = False,
       readonly = True
     )
@@ -28,7 +30,7 @@ class res_partner(models.Model):
       today = fields.Date.today()
 
       for people in self :
-        if people.dob and people.dob > today :
+        if people.dob and people.dob >= today :
           raise models.ValidationError (
             'Tanggal Lahir kamu salah'
           )
@@ -55,4 +57,13 @@ class res_partner(models.Model):
         else :
           # if date of birth is not exist
           people.age = -1
+
+    def _inverse_age(self) :
+      # Not yet implemented
+      return True
+
+    def _search_age(self) :
+       # Not yet implemented
+       return True
+
     

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="mata_kuliah_template">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="doc">
+        <t t-call="web.internal_layout">
+        
+          <div class="page">
+            <h1 style="text-align:center">REPORT MAHASISWA</h1>
+            <br></br>
+            <br></br>
+            <center>
+              <img t-if="not doc.image_256" t-att-src="web/static/src/img/placholder.png" alt="Contacts Photo"/>
+              <img t-if="doc.image_256" t-att-src="image_data_uri(doc.image_256)" alt="Contacts Photo" />
+            </center>
+            <br></br>
+            <br></br>
+            <h4>Nama : <t t-esc="doc.name" /></h4>
+            <h4>Kelas : <t t-esc="doc.kelas_id.nama" /></h4>
+            <h4>Usia : <t t-esc="doc.age" /></h4>
+            <br></br>
+            <br></br>
+            <h1 style="text-align:center">Mata Kuliah</h1>
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Mata Kuliah</th>
+                  <th>Kode Mata Kuliah</th>
+                  <th>Dosen Pengampu</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr t-foreach="doc.kelas_id.mata_kuliah" t-as="item_matkul" >
+                  <td><t t-esc="item_matkul.nama" /></td>
+                  <td><t t-esc="item_matkul.kode" /></td>
+                  <td><t t-esc="item_matkul.partner_id.name" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </t>
+      </t>
+    </t>
+  </template>
+</odoo>

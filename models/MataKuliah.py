@@ -11,3 +11,6 @@ class MataKuliah(models.Model):
         string='Dosen Pengampu',
         domain=[("is_dosen", "=", "True")],
     )
+    image = fields.Binary(
+        string="Foto"
+    )

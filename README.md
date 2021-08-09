@@ -1,12 +1,16 @@
 # NTI Latihan Kelas
 ## Overview
 Sebuah modul untuk Odoo 14 untuk manajemen kelas yang didalamnya terdapat Mahasiswa, Dosen, Mata Kuliah, dan Kelas. Struktur menu yang dibuat adalah sebagai berikut
- * Civitas Akademika
+ * Contacts
+   * .....
    * Dosen
    * Mahasiswa
  * Kelas
    * Kelas
    * Mata Kuliah
+
+## Report
+![Report Mahasiswa](https://github.com/loakajaye/latihan_evan/blob/main/blob/report_mahasiswa.JPG?raw=true)
 
 ## Prerequisite
 Oddo 14

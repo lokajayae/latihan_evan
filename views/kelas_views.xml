@@ -21,6 +21,7 @@
                     <form string="Kelas">
                         <sheet>
                             <group>
+                                <field name="image" widget="image" class="oe_avatar"/>
                                 <field name="nama"/>
                                 <field name="mahasiswa"/>
                                 <field name="wali_kelas"/>
@@ -41,14 +42,11 @@
                     <field name="wali_kelas" />
                     <templates>
                         <t t-name="kanban-box">
-                            <ul style="padding:30px;"> 
-                                <li>
-                                    Nama Kelas : <field name="nama" />
-                                </li>
-                                <li>
-                                    Wali Kelas : <field name="wali_kelas"/>
-                                </li>
-                              </ul>
+                            <div class="oe_kanban oe_kanban_global_click">
+                                Nama Kelas : <field name="nama" />
+                                <br></br>
+                                Wali Kelas : <field name="wali_kelas"/>
+                            </div>
                         </t>
                     </templates>
                 </kanban>

@@ -12,4 +12,10 @@ class Kelas(models.Model):
         string="Wali Kelas",
         domain=[("is_dosen", "=", "True")], 
     )
-    mata_kuliah = fields.Many2many('mata.kuliah', string="Mata Kuliah")
+    mata_kuliah = fields.Many2many(
+        'mata.kuliah', 
+        string="Mata Kuliah"
+    )
+    image = fields.Binary(
+        string="Foto"
+    )
