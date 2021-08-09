@@ -32,18 +32,15 @@
           <field name="search_view_id" ref="base.view_res_partner_filter"/>
           <field name='domain'>[('is_dosen', '=', False)]</field>
         </record>
-
-        <menuitem id="civitas_menuitem" 
-          name="Civitas Akademika"/>
-
+        
         <menuitem id="dosen_menuitem" 
           name="Dosen" 
-          parent="civitas_menuitem" 
+          parent="contacts.menu_contacts" 
           action="action_dosen"/>
 
         <menuitem id="mahasiswa_menuitem" 
         name="Mahasiswa" 
-        parent="civitas_menuitem"
+        parent="contacts.menu_contacts"
         action="action_mahasiswa"/>
     </data>
 </odoo>
