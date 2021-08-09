@@ -23,15 +23,15 @@ class res_partner(models.Model):
         string="Kelas",
     )
 
-    # @api.constraints('dob')
-    # def _check_dob(self) :
-    #   today = fields.Date.Today()
+    @api.constrains('dob')
+    def _check_dob(self) :
+      today = fields.Date.today()
 
-    #   for people in self :
-    #     if people.dob and people.dob >= today :
-    #       raise models.ValidationError (
-    #         'Tanggal Lahir kamu salah'
-    #       )
+      for people in self :
+        if people.dob and people.dob > today :
+          raise models.ValidationError (
+            'Tanggal Lahir kamu salah'
+          )
 
     @api.depends('dob')
     def _compute_age(self) :
